@@ -17,3 +17,6 @@ spec:
     path: apps
     repoURL: https://github.com/ayalaluquez/argocd-example-apps
     targetRevision: HEAD
+    helm:
+      valueFiles:
+        - values-prd.yaml

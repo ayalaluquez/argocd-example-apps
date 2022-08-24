@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     namespace: upn-{{ .Values.spec.destination.name }}
-    server: {{ .Values.spec.destination.name }}
+    name: {{ .Values.spec.destination.name }}
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
