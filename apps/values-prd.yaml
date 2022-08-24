@@ -4,4 +4,3 @@ spec:
   source:
     repoURL: https://github.com/ayalaluquez/argocd-example-apps
     targetRevision: HEAD
-    enviroment: prd
