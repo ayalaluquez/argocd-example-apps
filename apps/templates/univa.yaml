@@ -9,6 +9,12 @@ spec:
   destination:
     namespace: univa
     server: {{ .Values.spec.destination.server }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
   project: default
   source:
     path: helm-chart
