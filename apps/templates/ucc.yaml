@@ -1,8 +1,8 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ucc
-  namespace: argocd-{{ .Values.spec.destination.name }}
+  name: ucc-{{ .Values.spec.destination.name }}
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:

@@ -8,7 +8,7 @@ metadata:
 spec:
   destination:
     namespace: argo
-    name: gitops
+    name: prd
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
