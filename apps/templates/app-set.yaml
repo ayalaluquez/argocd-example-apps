@@ -16,8 +16,8 @@ spec:
     spec:
       project: default
       source:
-        repoURL: {{ .Values.spec.source.repoURL }}
-        targetRevision: {{ .Values.spec.source.targetRevision }}
+        repoURL: https://github.com/ayalaluquez/argocd-example-apps
+        targetRevision: HEAD
         path: helm-chart
       destination:
         server: '{{url}}'
