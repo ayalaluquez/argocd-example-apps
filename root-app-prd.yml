@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: prd
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  destination:
+    namespace: argo
+    name: gitops
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
+  project: prd
+  source:
+    path: apps
+    repoURL: https://github.com/ayalaluquez/argocd-example-apps
+    targetRevision: HEAD
