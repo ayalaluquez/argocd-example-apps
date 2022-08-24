@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: uca
+  name: uca-{{ .Values.spec.destination.name }}
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: uca
-    server: {{ .Values.spec.destination.server }}
+    namespace: uca-{{ .Values.spec.destination.name }}
+    server: {{ .Values.spec.destination.name }}
   syncPolicy:
     syncOptions:
       - CreateNamespace=true

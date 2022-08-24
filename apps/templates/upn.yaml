@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: upn
+  name: upn-{{ .Values.spec.destination.name }}
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: upn
-    server: {{ .Values.spec.destination.server }}
+    namespace: upn-{{ .Values.spec.destination.name }}
+    server: {{ .Values.spec.destination.name }}
   syncPolicy:
     syncOptions:
       - CreateNamespace=true
