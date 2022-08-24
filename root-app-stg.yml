@@ -8,7 +8,10 @@ metadata:
 spec:
   destination:
     namespace: argo
-    name: in-cluster
+    name: gitops
+  syncPolicy:
+    syncOptions:
+      - CreateNamespace=true
   project: stg
   source:
     path: apps
