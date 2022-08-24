@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kustomize-guestbook
+  name: uca
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   destination:
-    namespace: kustomize-guestbook
+    namespace: uca
     server: {{ .Values.spec.destination.server }}
-  project: default
+  project: {{ .Values.spec.destination.enviroment }}
   source:
-    path: kustomize-guestbook
+    path: helm-chart
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
