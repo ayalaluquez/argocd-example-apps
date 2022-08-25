@@ -14,6 +14,6 @@ spec:
       - CreateNamespace=true
   project: default
   source:
-    path: helm-chart
+    path: helm-chart/example
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
