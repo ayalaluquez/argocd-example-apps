@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  namespace: argocd # same namespace of argocd-app
+  name: prd
+  labels:
+    argocd.argoproj.io/secret-type: cluster
+type: Opaque
+stringData:
+  name: prd # Get from clusters - name field in config k8s file.
+  server: https://kubernetes.default.svc # Get from clusters - name - cluster - server field in config k8s file.
